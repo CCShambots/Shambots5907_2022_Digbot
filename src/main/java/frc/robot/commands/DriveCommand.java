@@ -20,13 +20,15 @@ public class DriveCommand extends CommandBase {
         this.leftStickX = leftStickX;
         this.leftStickY = leftStickY;
         this.rightStickY = rightStickY;
+
+        addRequirements(drivetrain);
     }
 
     public void execute() {
         if(drivetrain.getDriveType() == Tank) {
-            drivetrain.tankDrive(-leftStickY.getAsDouble(), -rightStickY.getAsDouble());
+            drivetrain.tankDrive(-leftStickY.getAsDouble() * 0.5, -rightStickY.getAsDouble() * 0.5);
         } else if(drivetrain.getDriveType() == Arcade) {
-            drivetrain.arcadeDrive(-leftStickY.getAsDouble(), leftStickX.getAsDouble());
+            drivetrain.arcadeDrive(-leftStickY.getAsDouble() * 0.5, leftStickX.getAsDouble() * 0.5);
         }
     }
 }

@@ -11,8 +11,8 @@ import static frc.robot.Constants.Arm.*;
 
 public class Arm extends SubsystemBase{
 
-    private DoubleSolenoid armSolenoid = new DoubleSolenoid(CTREPCM, ARM_SOLENOID_FORWARD, ARM_SOLENOID_REVERSE);
-    private DoubleSolenoid dumperSolenoid = new DoubleSolenoid(CTREPCM, DUMPER_SOLENOID_FORWARD, DUMPER_SOLENOID_REVERSE);
+    private DoubleSolenoid armSolenoid = new DoubleSolenoid(Constants.COMPRESSOR_ID, CTREPCM, ARM_SOLENOID_FORWARD, ARM_SOLENOID_REVERSE);
+    private DoubleSolenoid dumperSolenoid = new DoubleSolenoid(Constants.COMPRESSOR_ID, CTREPCM, DUMPER_SOLENOID_FORWARD, DUMPER_SOLENOID_REVERSE);
 
     public Arm() {}
 
