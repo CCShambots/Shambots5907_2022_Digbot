@@ -67,7 +67,7 @@ public class Drivetrain extends SubsystemBase{
 
     public void toggleDriveType() {
         if(driveType == DriveType.Tank) driveType = DriveType.Arcade;
-        if(driveType == DriveType.Arcade) driveType = DriveType.Tank;
+        else if(driveType == DriveType.Arcade) driveType = DriveType.Tank;
     }
 
     public static enum DriveType {

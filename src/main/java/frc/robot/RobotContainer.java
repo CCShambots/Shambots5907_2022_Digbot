@@ -1,6 +1,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.DriveCommand;
@@ -29,5 +31,8 @@ public class RobotContainer {
 
     new JoystickButton(controller, Controller.DUMPER_ACTUATION)
             .whenPressed(new InstantCommand(() -> arm.actuateDumper()));
+
+    new JoystickButton(controller, XboxController.Button.kLeftBumper.value)
+      .whenPressed(new InstantCommand(() -> drivetrain.toggleDriveType()));
   }
 }
